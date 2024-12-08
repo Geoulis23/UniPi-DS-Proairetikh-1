@@ -1,53 +1,25 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-struct student{
-    char name[20];
-    int yob;
-    char AM[7];
-}stud[3];
-
-
-int main(int argc, char *argv[]){
-    int max = 2025, pi;
-
-    for (int i = 0; i < 3; i++){
-        printf("Give the name of the student:\t");
-        scanf(" %s", &stud[i].name);
-        //printf("Name:\t%s", stud[i].name);
-        printf("Give the registration number of the student:\t");
-        scanf(" %s", &stud[i].AM);
-        printf("Give the year of birth of the student:\t");
-        scanf(" %d", &stud[i].yob);
-
-        if (max > stud[i].yob){
-            max = stud[i].yob;
-            pi = i;
-        }
-    }
-
-    switch (pi){
-    case 0:
-        printf("The older student is the first one\n");
-        break;
-
-    case 1:
-        printf("The older student is the second one\n");
-        break;
+int main(){
+    char on[15], ep[15]; //gurw stous 15 xarakthres kala einai 
+    int y_b, y_w;
     
-    default:
-        printf("The older student is the third one\n");
-        break;
-    }
-    // printf("Name:\t");
-    // printf("\nexited\n");
+    printf("Dwse onoma: ");
+    scanf("%s", &on);
+    printf("Dwse epi8eto: ");
+    scanf("%s", &ep);
+    printf("Dwse etos gennhshs: ");
+    scanf("%d", &y_b);
+    printf("Dwse etos enar3hs ergasias: ");
+    scanf("%d", &y_w);
+
+    printf("\nKurie/a: %s %s\n\t8a 8elame na sas enhmerwsoume ta e3hs:\n", on, ep);
     
-    printf("Name:\t%s\n", stud[pi].name);
-    printf("AM:\t%s\n", stud[pi].AM);
-    printf("Year of birth:\t%d\n", stud[pi].yob);
+    int min_years = 65 - (2024 - y_b);
+    int worked_years = (2024 - y_w) + min_years;
+
+    printf("Ta elaxista eth pou apaitountai gia th synta3iodothsh sas einai: %d\n", min_years);
+    printf("Ta xronia pou 8a exete ergastei einai: %d", worked_years);
 
     return 0;
 }
-
-
-
